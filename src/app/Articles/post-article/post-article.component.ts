@@ -20,9 +20,16 @@ export class PostArticleComponent {
 
   @ViewChild('fileinput' , {static : false} ) fileinput! : ElementRef
 
-  categories = ['Web Development', 'Mobile Development', 'Software Engineering',
+  categories = [
+    'Web Development', 'Mobile Development', 'Software Engineering',
     'Data Science', 'AI', 'Cyber Security', 'Cloud Computing', 'Blockchain',
-    'Tech machines', 'Gadgest', 'Others'];
+    'Tech Machines', 'Gadgets',
+    'Politics', 'Economics', 'Health', 'Lifestyle', 'Travel',
+    'Education', 'Entertainment', 'Sports', 'Business', 'Environment',
+    'Science', 'History', 'Culture', 'Art', 'Literature',
+    'Finance', 'Gaming', 'Food & Drink', 'Social Issues', 'Philosophy','Others',
+];
+
   constructor(private formBuilder: FormBuilder,private _article : ArticleService) { }
 
   ngOnInit(): void {
