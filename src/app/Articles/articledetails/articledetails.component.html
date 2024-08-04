@@ -1,0 +1,30 @@
+<section class="blog-detail mtb-40">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="blog-left">
+          <h1>{{article?.title}}</h1>
+          <div class="posted-on">
+
+            <p>by <span>{{ article?.name }}</span> on
+              <span>{{ article?.date | date: 'fullDate' }}
+                at {{ article?.date | date: 'shortTime' }}</span></p>
+
+          </div>
+          <div class="detail-img">
+            <img [src]="'http://localhost:5000/' + article?.image" alt="Uploaded Image" height="500" width="90%">
+          </div>
+          <div class="blog-desc">
+
+            <p>{{ article?.data }}</p>
+            <!-- <p> {{article?._id}} </p> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+          <app-featured-article [articleId]=Idarticle ></app-featured-article>
+          <app-categories></app-categories>
+      </div>
+    </div>
+  </div>
+</section>

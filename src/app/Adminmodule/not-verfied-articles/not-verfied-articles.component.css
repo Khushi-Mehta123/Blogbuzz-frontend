@@ -1,0 +1,48 @@
+.table {
+  margin: 20px;
+  width: calc(100% - 40px);
+}
+
+/* Add margin to table cells */
+.data {
+  margin: 8px;
+  padding: 8px; /* You can also add padding to make it look nicer */
+  border: 1px solid #ddd;
+  word-wrap: break-word; /* Ensure long words break to fit within the cell */
+  word-break: break-all; /* Break long words to fit within the cell */
+  white-space: pre-line; /* Handle new lines within the cell */
+}
+
+.table td, .table th {
+  margin: 10px;
+  padding: 8px; /* You can also add padding to make it look nicer */
+  border: 1px solid #ddd;
+}
+
+/* Add margin to specific elements */
+.table button {
+  margin: 5px;
+}
+
+.table th, .table td {
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.allArticles{
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.pre-line {
+  white-space: pre-line;
+}

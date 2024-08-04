@@ -1,0 +1,13 @@
+.form-control{
+  margin: 10px;
+}
+
+.submit{
+  margin-top: 20px;
+  float: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}

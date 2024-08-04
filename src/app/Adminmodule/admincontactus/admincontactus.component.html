@@ -1,0 +1,75 @@
+<div class="d-flex justify-content-between align-items-center mt-4">
+  <h4>All Users Queries</h4>
+  <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+    <div class="input-group">
+      <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+      <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+    </div>
+  </form>
+</div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">subject</th>
+      <th scope="col"> message</th>
+      <th scope="col"> action</th>
+      <th scope="col"> Reply</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of allQueries; index as i">
+      <td > {{item._id}} </td>
+      <td> {{item.name}} </td>
+      <td> {{item.email}} </td>
+      <td> {{item.subject}} </td>
+      <td> {{item.message}} </td>
+      <td>
+        <button class="border-light-subtle" (click)="onGetdata(item)"> Reply </button>
+        <button class="border-light-subtle" (click)="onDeleteReply(item)"> Delete </button>
+      </td>
+      <td> {{item.reply}} </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="modal fade show" [class.show]="showModal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+
+          <h5 class="modal-title">Reply </h5>
+
+          <button (click)="onCloseModal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+
+      <form [formGroup]="replyform" (ngSubmit)="onReply()">
+          <div class="modal-body">
+
+            <div class="form-group">
+              <label class="label">Reply</label>
+              <textarea name="reply" cols="30" rows="10"
+              formControlName="reply"></textarea>
+              <small *ngIf="!replyform.get('reply')!.valid && replyform.get('reply')!.touched" class="form-text text-danger">Please Enter salary.</small>
+          </div>
+
+          </div>
+
+          <div class="modal-footer">
+              <button type="button" (click)="onCloseModal()" class="btn btn-secondary"
+               data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+      </form>
+      </div>
+  </div>
+</div>

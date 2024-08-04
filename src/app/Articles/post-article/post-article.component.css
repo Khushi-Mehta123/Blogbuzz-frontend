@@ -1,0 +1,47 @@
+
+.form-group{
+  margin: 20px;
+}
+
+.btn {
+  /* display: flex; */
+  justify-content: center;
+  float: center;
+}
+
+.submit{
+  margin-top: 20px;
+  float: center;
+}
+
+.form-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.form-box {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+textarea.form-control {
+  width: 100%;
+  max-width: 100%;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.label{
+  margin-bottom: 20px;
+}
+

@@ -1,0 +1,16 @@
+<section class="featured-blog mtb-40">
+  <div class="container">
+    <div class="row">
+        <h2 class="title-heading">Latest Articles</h2>
+      <div class="col-md-4 "  *ngFor="let item of AllArticles | verfiedData " >
+        <div class="blog-box">
+          <img [src]="'http://localhost:5000/' + item.image" alt="Uploaded Image" width="100px" height="300px">
+          <h3> {{item?.title}} </h3>
+          <p>by <span> {{item?.name}} </span></p>
+          <p>{{ item.data | slice:0:100 }}...</p>
+          <a [routerLink]="['/articles', item?._id]" class="btn btn-primary">Read more...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

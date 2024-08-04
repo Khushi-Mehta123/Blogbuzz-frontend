@@ -1,0 +1,8 @@
+<div class="widget right-widget categories">
+  <h3 class="widget-title">Popular Categories</h3>
+  <ul>
+    <li *ngFor="let category of categories" (click)="selectCategory(category)">
+      <a [routerLink]= "[]">{{ category }}</a>
+    </li>
+  </ul>
+</div>

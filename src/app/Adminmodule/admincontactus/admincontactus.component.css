@@ -1,0 +1,88 @@
+.table {
+  margin: 20px;
+  width: calc(100% - 40px); /* Adjust width to account for the margin */
+}
+
+/* Add margin to table cells */
+.table td, .table th {
+  margin: 10px;
+  padding: 8px; /* You can also add padding to make it look nicer */
+  border: 1px solid #ddd;
+}
+
+/* Add margin to specific elements */
+.table button {
+  margin: 5px;
+}
+
+/* Optional: Styling the table for better visuals */
+.table {
+  border-collapse: collapse;
+  width: 95%;
+}
+
+.table th, .table td {
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.alluser{
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal.fade.show {
+  display: block;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  background-color: #fff;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
+}
+
+.form-group .dropdown-button::after {
+  content: '\25BC'; /* Down arrow icon */
+  font-size: 16px;
+  color: #666;
+}
+
+.label{
+  margin: 2px;
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+}
+
+.btn-outline-success {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}

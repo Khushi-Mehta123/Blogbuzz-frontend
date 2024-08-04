@@ -1,0 +1,66 @@
+<section class="Singup-wrap mtb-40">
+  <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="login-box">
+                <h1>User Registration</h1>
+                <div *ngIf="datasaved" class="alert alert-success" >
+                   {{message}}
+                </div>
+
+                <form [formGroup]="regForm" (ngSubmit)="onUserSubmit()">
+
+                    <div class="form-group form-row">
+                        <label class="col-md-3">Name <span class="required">*</span></label>
+                        <div class="col-md-9">
+                          <input type="text" formControlName="name" class="form-control"  placeholder="Enter Name"
+                          required="">
+
+                          <span class="text-danger" *ngIf="!regForm.get('name')?.valid && regForm.get('name')?.touched"> Please Enter Name </span>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group form-row">
+                        <label class="col-md-3">Email ID <span class="required">*</span></label>
+                        <div class="col-md-9">
+                          <input type="text" formControlName="email" class="form-control" placeholder="Email Id" required="">
+                          <div *ngIf="regForm.get('email')?.hasError('emailTaken')">
+                            <small class="text-danger"> Email is already taken </small>
+                          </div>
+
+                          <span class="text-danger" *ngIf="!regForm.get('email')?.valid && regForm.get('email')?.touched">
+                             Please Enter email </span>
+                        </div>
+
+
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-md-4">Password <span class="required">*</span></label>
+                        <div class="col-md-9">
+                          <input type="password" formControlName="password" class="form-control" placeholder="Password" required="">
+                          <span class="text-danger" *ngIf="!regForm.get('password')?.valid && regForm.get('password')?.touched">
+                            Please Enter Password and must be a number</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-row">
+                      <label class="col-md-4"> Your image <span class="required"> </span></label>
+                      <div class="col-md-9">
+                        <input type="file" #inpiutimage class="form-control" (change)="OnPhotoupload($event)">
+
+                      </div>
+                  </div>
+
+                    <div class="form-group , submit" >
+                        <button type="submit" [disabled]="!regForm.valid" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+
+  </div>
+</section>
+
+<!-- <app-footer></app-footer> -->

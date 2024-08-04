@@ -1,0 +1,61 @@
+<section class="form-section mtb-40">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="form-box">
+
+          <h4 class="text-center mb-4">Submit Your Article</h4>
+
+           <form (ngSubmit)="onSubmit()" [formGroup]="articleForm">
+
+            <div *ngIf="datasaved" class="alert alert-success" >
+              {{message}}
+                </div>
+
+                          <div>
+                          <label class="d-block text-center , label" >Article Title</label>
+                          <input type="text" class="form-control mx-auto" formControlName="title">
+                          <small class="text-danger" *ngIf="!articleForm.get('title')?.valid && articleForm.get('title')?.touched">
+                            Please Enter Your Article Title</small>
+                          </div>
+
+                          <div class="form-group">
+                            <label  class="d-block text-center , label" >Article data</label>
+                            <textarea name="data" id="data" cols="90" rows="8" class="form-control mx-auto"
+                            formControlName="data"></textarea>
+                            <small class="text-danger" *ngIf="!articleForm.get('data')?.valid && articleForm.get('data')?.touched">
+                              Please Enter Your Article Title</small>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <input #fileinput type="file" (change)="OnImagePost($event)">
+                            </div>
+
+                            <div class="col-md-6">
+                              <select class="form-select" aria-label="Category select" formControlName="category"
+                               (change)="onCategoryChange($event)">
+                                <option selected>Choose a category</option>
+                                <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+                              </select>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                          </div>
+                        </form>
+
+
+            </div>
+        </div>
+      </div>
+
+  </div>
+</section>
+
+<!-- <app-footer></app-footer> -->
+
+
+

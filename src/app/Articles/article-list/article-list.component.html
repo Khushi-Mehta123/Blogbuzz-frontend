@@ -1,0 +1,66 @@
+<section class="blog-list mtb-40">
+  <div class="container">
+    <nav class="navbar navbar-light bg-white justify-content-between">
+      <a class="navbar-brand">Article List</a>
+      <span>
+
+        <form class="form-inline d-flex align-items-center">
+          <div class="input-group">
+            <div class="form-outline" data-mdb-input-init></div>
+          </div>
+        </form>
+        <div *ngIf="!login">
+          <button class="btn btn-outline-success my-2 my-sm-0 ml-2 d-flex align-items-center"
+        type="button" (click)="OnPostArticle()" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+          </svg>
+          Post Your Article
+        </button>
+        </div>
+
+        <div *ngIf="login">
+          <button class="btn btn-outline-success my-2 my-sm-0 ml-2 d-flex align-items-center"
+        type="button" (click)="OnLoginArticle()" >
+
+          Login to post
+        </button>
+        </div>
+      </span>
+    </nav>
+
+    <div class="form-outline , search" data-mdb-input-init>
+      <input type="search" id="form1" class="form-control" name="searchArticle" value="search"
+      placeholder="Search Article by title && name && data" aria-label="Search" [(ngModel)] = "searchArticle" />
+    </div>
+
+    <div class="row">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-12" *ngFor="let item of AllArticles | searchArticle : searchArticle : selectedcategory">
+            <div class="blog-box">
+              <div class="row">
+                <div class="col-md-4">
+                  <img [src]="'http://localhost:5000/' + item.image" alt="Uploaded Image" width="200">
+                </div>
+                <div class="col-md-8">
+                  <h3>{{ item.title }}</h3>
+                  <p>by <span>{{ item.name }}</span></p>
+                  <p>{{ item.data | slice:0:100 }}...</p>
+                  <p>Posted on: {{ item.date | date: 'medium' }}</p>
+                  <a [routerLink]="['/articles', item._id]" class="readmore">Read more...</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <!-- <app-featured-article></app-featured-article> -->
+        <app-categories (categorySelected) = "onCategorySelected($event)"></app-categories>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
