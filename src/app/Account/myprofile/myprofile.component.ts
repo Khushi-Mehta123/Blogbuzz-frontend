@@ -36,8 +36,21 @@ export class MyprofileComponent implements OnInit {
   showNotVerifiedPosts = false;
   showqueries = false;
 
-  states: string[] = ['State1', 'State2', 'State3'];
-  countries: string[] = ['Country1', 'Country2', 'Country3'];
+   states: string[] = [
+    'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh',
+    'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand',
+    'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur',
+    'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab',
+    'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura',
+    'Uttar Pradesh', 'Uttarakhand', 'West Bengal'
+];
+
+countries: string[] = [
+    'United States', 'Canada', 'Mexico', 'Brazil', 'Argentina',
+    'United Kingdom', 'Germany', 'France', 'Italy', 'Spain',
+    'Australia', 'Japan', 'South Korea', 'China', 'India',
+    'South Africa', 'Nigeria', 'Egypt', 'Saudi Arabia', 'United Arab Emirates'
+];
 
   constructor(
     // private _upduser : AccountService,
